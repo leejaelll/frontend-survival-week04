@@ -1,30 +1,34 @@
+/* eslint-disable function-paren-newline */
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable indent */
+/* eslint-disable operator-linebreak */
+/* eslint-disable comma-dangle */
+
 import Restaurant from '../types/Restaurant';
 
-type FilterConditions = {
-  filterText: string;
+type filterRestaurantsProps = {
+  searchText: string;
   filterCategory: string;
 };
 
-function normalize(text: string) {
-  return text.trim().toLocaleLowerCase();
-}
-
 export default function filterRestaurants(
   restaurants: Restaurant[],
-  { filterText, filterCategory }: FilterConditions
+  { searchText, filterCategory }: filterRestaurantsProps
 ): Restaurant[] {
-  const filteredRestaurants = filterCategory === '전체'
-    ? restaurants
-    : restaurants.filter(
-      (restaurant) => restaurant.category === filterCategory
-    );
+  const filteredRestaurants =
+    filterCategory === '전체'
+      ? restaurants
+      : restaurants.filter(
+          (restaurant) => restaurant.category === filterCategory
+        );
 
-  const query = normalize(filterText);
-
+  const normalize = (value: string) => value.trim().toLocaleLowerCase();
+  const query = normalize(searchText);
   if (!query) {
     return filteredRestaurants;
   }
 
   return filteredRestaurants.filter((restaurant) =>
-    normalize(restaurant.name).includes(query));
+    normalize(restaurant.name).includes(query)
+  );
 }

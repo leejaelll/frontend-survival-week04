@@ -1,10 +1,10 @@
-import Food from './Food';
+import Menu from './Menu';
 
 interface Restaurant {
   id: string;
   category: string;
   name: string;
-  menu: Food[];
+  menu: Menu[];
 }
 
 export default Restaurant;

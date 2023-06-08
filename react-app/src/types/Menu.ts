@@ -1,7 +1,7 @@
-interface Food {
+interface Menu {
   id: string;
   name: string;
   price: number;
 }
 
-export default Food;
+export default Menu;

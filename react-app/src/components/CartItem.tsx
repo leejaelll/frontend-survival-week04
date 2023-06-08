@@ -1,8 +1,8 @@
-import Food from '../types/Food';
+import Menu from '../types/Menu';
 import MenuItem from './MenuItem';
 
 type CartItemProps = {
-  food: Food;
+  food: Menu;
   index: number;
   onClickCancel: (index: number) => void;
 };

@@ -1,0 +1,38 @@
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  font-weight: 900;
+}
+
+.title {
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  padding: 0 20rem;
+  gap: 100px;
+}
+
+.menu-search {
+  margin-right: auto;
+}
+
+.menu-search label {
+  margin-right: 10px;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+}

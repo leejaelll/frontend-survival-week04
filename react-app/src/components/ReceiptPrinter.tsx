@@ -1,8 +1,7 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import _ from 'lodash';
-
-import MenuItem from './MenuItem';
-
 import Receipt from '../types/Receipt';
+import MenuItem from './MenuItem';
 
 type ReceiptPrinterProps = {
   receipt: Receipt;
@@ -16,13 +15,7 @@ export default function ReceiptPrinter({ receipt }: ReceiptPrinterProps) {
   const { id, menu, totalPrice } = receipt;
 
   return (
-    <div
-      style={{
-        width: '50%',
-        border: '1px solid black',
-        textAlign: 'center',
-      }}
-    >
+    <div>
       <h2>영수증</h2>
       <div>
         <h3>주문번호</h3>
@@ -30,12 +23,7 @@ export default function ReceiptPrinter({ receipt }: ReceiptPrinterProps) {
       </div>
       <div>
         <h3>주문목록</h3>
-        <ul
-          style={{
-            padding: 0,
-            listStyle: 'none',
-          }}
-        >
+        <ul>
           {menu.map((food, index) => {
             const key = `${food.id}-${index}`;
 

@@ -1,7 +1,8 @@
-import Food from '../types/Food';
+/* eslint-disable react/jsx-one-expression-per-line */
+import Menu from '../types/Menu';
 
 type OrderButtonProps = {
-  foods: Food[];
+  foods: Menu[];
   onClick: () => void;
 };
 

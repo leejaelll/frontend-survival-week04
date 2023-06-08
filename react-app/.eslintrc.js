@@ -37,7 +37,7 @@ module.exports = {
     'keyword-spacing': ['error', { before: true, after: true }],
     'comma-spacing': ['error', { before: false, after: true }],
     'comma-style': ['error', 'last'],
-    'comma-dangle': 'off',
+    'comma-dangle': ['error', 'always-multiline'],
     'space-in-parens': ['error', 'never'],
     'block-spacing': 'error',
     'array-bracket-spacing': ['error', 'never'],
@@ -72,9 +72,5 @@ module.exports = {
       },
     ],
     'jsx-a11y/label-has-associated-control': ['error', { assert: 'either' }],
-    'no-confusing-arrow': 'off',
-    'implicit-arrow-linebreak': 'off',
-    'react/jsx-one-expression-per-line': 'off',
-    'object-curly-newline': 'off',
   },
 };

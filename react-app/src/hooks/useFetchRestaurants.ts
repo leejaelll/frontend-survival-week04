@@ -1,13 +1,15 @@
-import { useFetch } from 'usehooks-ts';
+/* eslint-disable comma-dangle */
 
+import { useFetch } from 'usehooks-ts';
 import Restaurant from '../types/Restaurant';
 
-const url = 'http://localhost:3000/restaurants';
+const url = 'http://localhost:9999/restaurants';
 
 interface Restaurants {
   [restaurants: string]: Restaurant[];
 }
 
+// '/restaurants' endpoint
 export default function useFetchRestaurants() {
   const { data } = useFetch<Restaurants>(url);
 

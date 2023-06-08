@@ -1,33 +1,39 @@
-import Categories from './Categories';
-import TextField from './TextField';
-
 type SearchBarProps = {
   categories: string[];
-  filterText: string;
-  setFilterText: (text: string) => void;
+  searchText: string;
   setFilterCategory: (text: string) => void;
+  setSearchText: (text: string) => void;
 };
 
 export default function SearchBar({
   categories,
-  filterText,
-  setFilterText,
+  searchText,
   setFilterCategory,
+  setSearchText,
 }: SearchBarProps) {
+  const id = 'input-search';
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchText(event.target.value);
+  };
   return (
-    <div>
-      {/* 검색창 */}
-      <TextField
-        label="검색"
-        placeholder="식당 이름"
-        text={filterText}
-        setText={setFilterText}
+    <>
+      <label htmlFor={id}>검색</label>
+      <input
+        id={id}
+        placeholder="식당이름"
+        type="text"
+        value={searchText}
+        onChange={handleChange}
       />
-      {/* 카테고리 버튼 리스트 */}
-      <Categories
-        categories={categories}
-        setFilterCategory={setFilterCategory}
-      />
-    </div>
+      <ul className="button-container">
+        {['전체', ...categories].map((category) => (
+          <li key={category}>
+            <button type="button" onClick={() => setFilterCategory(category)}>
+              {category}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }

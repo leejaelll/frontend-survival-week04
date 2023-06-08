@@ -1,8 +1,8 @@
-import Food from './Food';
+import Menu from './Menu';
 
 interface Receipt {
   id: string;
-  menu: Food[];
+  menu: Menu[];
   totalPrice: number;
 }
 

@@ -1,23 +1,20 @@
+/* eslint-disable react/jsx-one-expression-per-line */
+
 import { HTMLAttributes } from 'react';
 
-import Food from '../types/Food';
+import Menu from '../types/Menu';
 
 type MenuItemProps = {
-  food: Food;
+  food: Menu;
 } & HTMLAttributes<Element>;
 
 export default function MenuItem({ food, children }: MenuItemProps) {
   const { name, price } = food;
 
   return (
-    <li
-      style={{
-        display: 'flex',
-        paddingBlock: '.5rem',
-      }}
-    >
-      <span style={{ margin: '0 auto' }}>
-        {name} ({price.toLocaleString()}원)
+    <li>
+      <span>
+        {name}({price.toLocaleString()}원)
       </span>
       {children}
     </li>
