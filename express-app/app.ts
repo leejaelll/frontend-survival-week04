@@ -1,28 +1,16 @@
-import express from 'express';
 import cors from 'cors';
+import express from 'express';
 
-const port = 3000;
-
+// TODO: Express 를 이용하여 서버를 만들어 주세요.
 const app = express();
+const PORT = 9999;
 
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('Hello, world!');
-});
-
-app.post('/orders', (req, res) => {
-  const { menu, totalPrice } = req.body;
-
-  const receipt = {
-    id: Date.now().toString(),
-    menu,
-    totalPrice,
-  };
-
-  res.status(201).send({ receipt });
-});
+// app.get('/', (req, res) => {
+//   res.send('hi');
+// });
 
 app.get('/restaurants', (req, res) => {
   const restaurants = [
@@ -65,6 +53,18 @@ app.get('/restaurants', (req, res) => {
   res.send({ restaurants });
 });
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+app.post('/orders', (req, res) => {
+  const { menu, totalPrice } = req.body;
+
+  const receipt = {
+    id: Date.now().toString(),
+    menu,
+    totalPrice,
+  };
+
+  res.status(201).send({ receipt });
+});
+
+app.listen(PORT, () => {
+  console.log(`http://localhost:${PORT}`);
 });
